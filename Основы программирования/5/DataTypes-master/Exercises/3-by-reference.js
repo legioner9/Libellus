@@ -1,5 +1,7 @@
 'use strict';
 
-const inc = null;
+const inc = (N) => {
+  if (typeof N === 'object') N.n++;
+};
 
 module.exports = { inc };
