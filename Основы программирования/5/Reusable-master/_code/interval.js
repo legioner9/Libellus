@@ -1,10 +1,9 @@
 'use strict';
-
 const INTERVAL = 500;
 const MAX_VALUE = 10;
 
 let counter = 0;
-let timer;
+let timer = null;
 
 const event_ = () => {
   if (counter === MAX_VALUE) {
