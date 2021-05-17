@@ -2,7 +2,7 @@
 
 
 const f = (args = {}) => {
-  args.a = args.a || 'is?';
+  args.a = args.a || 'is?';// not equivalent false!!!
   args.b = args.b || {};
 
   debugger
