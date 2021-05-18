@@ -10,13 +10,15 @@ const c = function(x = '') {
       // b: "ave"
       // this: c
       // a: "ave"
-    }
+    },
   };
 };
 
-new c('ave').f();
+const cf = new c('ave');
+// cf: {f: ƒ}
+cf.f();
 
-const d = function(x='') {
+const d = function(x = '') {
   debugger
   const a = x;
   return () => {
@@ -30,4 +32,7 @@ const d = function(x='') {
   };
 };
 
-d('ave')();
+const dd = d('ave');
+dd();// dd: () => {…}
+
+debugger
