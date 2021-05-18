@@ -1,7 +1,7 @@
 'use strict';
 
 const Context = function() {
-  this.name = 'Marcus';
+  this.name = 'Marcus';//private field for f2 !!!
   const city = {
     name: 'Kiev',
     year: 482,
@@ -41,3 +41,6 @@ debugger
 const c1 = c.f1();
 const c2 = c.f2();
 const c3 = c.f3();
+// c1: "Kiev"
+// c2: "Marcus"
+// c3: "Kiev"
