@@ -7,6 +7,7 @@ const o = [
 
 for (let i = 0; i < o.length; i++) {
   (function(i) {
+    /// ...
     debugger
     // Local
     // i: 0
@@ -14,5 +15,4 @@ for (let i = 0; i < o.length; i++) {
     // name: "king"
     // species: "lyon"
   }).call(o[i], i);
-
 }
