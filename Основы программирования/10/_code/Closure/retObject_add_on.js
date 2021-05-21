@@ -22,4 +22,4 @@ const a = adder(2).add(5).value(console.log).add(55).on(function(a, b,thisArg) {
     console.log(`${a}+${b} > 100 operation is canseled return ${a}`);
     return thisArg(a);
   } else return thisArg(a + b);
-}).add(100).value(console.log).add(10).value(console.log);
+}).add(100).value(console.log).add(10).value(console.log).add(100);
