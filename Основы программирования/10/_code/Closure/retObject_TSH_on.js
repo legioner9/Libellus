@@ -1,29 +1,35 @@
 'use strict';
 
-const adder = x => {
+const adder = a => {
   const obj = {};
   let fnZero = null;
-  const value = fn => {
-    fn(x);
-    return adder(x);
+  const closure = { obj, fnZero };
+  const f = x => {
+    const value = fn => {
+      fn(x);
+      return f(x);
+    };
+    const add = y => {
+      let z = x + y;
+      if (z < 0) {
+        if (closure.fnZero) closure.fnZero();
+        z = 0;
+      }
+      return f(z);
+    };
+    const on = (name, callback) => {
+      if (name === 'zero') closure.fnZero = callback;
+      return closure.obj;
+    };
+    return Object.assign(obj, { value, add, on });
   };
-  const add = y => {
-    let z = x + y;
-    if (z < 0) {
-      if (fnZero) fnZero();
-      z = 0;
-    }
-    return adder(z);
-  };
-  const once = (name, callback) => {
-    if (name === 'zero') fnZero = callback;
-    return obj;
-  };
-  return Object.assign(obj, { value, add, once });
+  return f(a);
 };
 debugger
 const a = adder(4)
   .add(6)
-  .once('zero', () => console.log('zero'))
+  .on('zero', () => console.log('zero'))
+  .value(console.log)
   .add(-22)
-  .add(-2);
+  .add(-2)
+  .value(console.log);
