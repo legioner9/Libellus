@@ -21,5 +21,11 @@ const seq = (f) => {
   return ch_fn;
 };
 
+const f1 = d => d + 2;
+const f2 = d => d * 2;
+const f3 = d => d / 2;
+
+const s = seq(x => x * 2)(x => x + 7)(5)
+debugger
 
 module.exports = { seq };
