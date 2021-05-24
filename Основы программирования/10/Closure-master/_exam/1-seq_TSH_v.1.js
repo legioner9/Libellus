@@ -1,10 +1,11 @@
 'use strict';
 
 const seq = (f) => {
-  return (g) => {
+  const fc = (g) => {
     if (typeof g === 'number') return f(g);
     else return seq((x) => f(g(x)));
   };
+  return fc;
 };
 const f1 = d => d + 2;
 const f2 = d => d * 2;
