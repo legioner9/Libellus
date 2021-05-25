@@ -10,7 +10,7 @@ const seq = (f) => {
       return ch_fn;
     } else {
       if (type === 'number') {
-        return closure.arr_fn.reduce((a,b) => b(a));
+        return closure.arr_fn.reduce((a, b) => b(a));
       } else {
         throw Error('type error');
       }
@@ -20,6 +20,5 @@ const seq = (f) => {
   ch_fn(f);
   return ch_fn;
 };
-
 
 module.exports = { seq };
