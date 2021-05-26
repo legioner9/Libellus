@@ -1,10 +1,10 @@
 'use strict';
 
-const nob = function(closure = {
+const Nob = function(closure = {
   a: 0,
   b: []
 }) {
-  const descriptors_ = {
+  this.descriptors_ = {
     pr_a: {
       set(x) {
         debugger
@@ -17,9 +17,9 @@ const nob = function(closure = {
       },
     },
   };
-  return Object.defineProperties({}, descriptors_);
+  return Object.defineProperties({}, this.descriptors_);
 };
 
-const a = nob();
+const a = new Nob();
 debugger
 a.pr_a = 6;
