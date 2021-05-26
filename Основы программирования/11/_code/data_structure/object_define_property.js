@@ -1,11 +1,23 @@
 'use strict';
 
-const obj = Object.defineProperty({}, 'a', {
-    value: 'aa'
+const obj = Object.defineProperties({}, {
+    a: {
+      value: 0,
+      writable: true,
+    },
+    b: {
+      set(x) {
+        this.a = x;
+        console.log(`set b= ${this.b} `);
+      },
+      get() {
+        return this.a;
+      }
+    },
   }
 );
-
-let gs = 0;
+debugger
+obj.b = 6;
 
 const obj_1 = Object.defineProperties({}, {
   a: {
