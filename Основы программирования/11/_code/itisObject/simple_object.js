@@ -27,7 +27,9 @@ for (const key in ob) {
   console.log(ob[key]);
 }
 
-for (let item of ob){
-  debugger
-}
+const fs = s => s + 'Born';
+
+const ob_5 = { // ob_5: {cityBorn: "MarcusBorn"}
+  [fs('city')]:fs('Marcus'),
+};
 debugger
