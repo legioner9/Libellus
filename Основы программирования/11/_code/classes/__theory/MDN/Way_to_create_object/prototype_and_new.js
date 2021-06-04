@@ -10,3 +10,12 @@ Ob.prototype.add_a = function(d) {
 };
 
 const ob = new Ob();
+// ob: Ob
+// a: 0
+//   __proto__:
+//   add_a: ƒ (d)
+//   constructor: ƒ (a = 0)
+//     arguments: (...)
+//     caller: (...)
+//     length: 0
+//     name: "Ob"
