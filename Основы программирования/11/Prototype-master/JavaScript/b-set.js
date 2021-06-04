@@ -13,3 +13,4 @@ Object.setPrototypeOf(p1, Rect.prototype);
 console.log(p1);
 console.log(p1.toString());
 console.log(`${p1}`);
+
