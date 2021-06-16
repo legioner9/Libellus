@@ -1,0 +1,8 @@
+// Square: ƒ Square(x, y, side)
+//    arguments: (...)
+//    caller: (...)
+//    length: 3
+//    name: "Square"
+//    prototype:
+//      constructor: ƒ Square(x, y, side)
+//      __proto__: Object

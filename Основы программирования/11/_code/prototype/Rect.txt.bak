@@ -1,0 +1,12 @@
+ Rect ƒ Rect(x, y, width, heght)
+    arguments (...)
+    caller (...)
+    length 4
+    name Rect
+    prototype
+      constructor ƒ Rect(x, y, width, heght)
+        arguments (...)
+        caller (...)
+        length 4
+        name Rect
+        prototype {constructor ƒ}

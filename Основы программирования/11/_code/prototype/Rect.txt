@@ -1,0 +1,9 @@
+// Rect: ƒ Rect(x, y, width, heght)
+//    arguments: (...)
+//    caller: (...)
+//    length: 4
+//    name: "Rect"
+//    prototype:
+//      toString: ƒ ()
+//      constructor: ƒ Rect(x, y, width, heght)
+//      __proto__: Object
