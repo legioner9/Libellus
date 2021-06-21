@@ -9,13 +9,16 @@ const isProto = Object.getPrototypeOf(obj) === proto;// true
 const is__proto__ = obj.__proto__ === proto;// true
 
 const _isPrototypeOf = function (obj_proto, object) {
-  const proto = object.__proto__;
-  if (proto !== undefined) {
+  try {
+    const proto = object.__proto__;
     if (obj_proto === proto) return true;
-    else _isPrototypeOf(obj_proto, proto);
+    else _isPrototypeOf(obj_proto, proto.__proto__);
+  } catch (e) {
+    console.log(e.message);
   }
   return false;
 }
 
 debugger
-const ipo = _isPrototypeOf(proto, obj);
+const _ipo = _isPrototypeOf(proto, obj);
+const ipo = obj.prototype.isPrototypeOf(proto);
