@@ -14,6 +14,7 @@ const init_cache = () => {
       // add to cache
       cache[key] = res;
     }
+    // return main result
     return res;
   };
 };
