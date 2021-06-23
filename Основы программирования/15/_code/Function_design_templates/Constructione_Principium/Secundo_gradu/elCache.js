@@ -1,5 +1,7 @@
 'use strict';
 
+// Child of elClosure
+
 const init_cache = () => {
   // modify obj_closure - closure block
   const cache = {};

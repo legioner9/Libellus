@@ -1,5 +1,7 @@
 'use strict';
 
+// Child of duplex_provocare
+
 const fn_chain = (a) => (b) => (c) => a + b + c;
 
 // Using
