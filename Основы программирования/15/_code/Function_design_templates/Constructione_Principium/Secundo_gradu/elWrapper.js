@@ -11,8 +11,9 @@ args : [${args.join(', ')}]`;
 
 // Using
 const fn = (a, b) => a + b;
-
+// First wrapped
 const w_fn = wrapper_fn(fn);
+// Last call function
 const result = w_fn(2, 3);
 
 console.dir({ result });

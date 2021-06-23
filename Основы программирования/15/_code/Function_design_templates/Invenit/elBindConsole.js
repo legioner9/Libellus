@@ -3,6 +3,6 @@
 const sum = (a, b, callback) => callback(a + b);
 
 // bind console
-const callback = console.log.bind(null, 'Result is: ');
+const callback_ = console.log.bind(null, 'Result is: ');
 
-sum(3, 5, callback);
+sum(3, 5, callback_);

@@ -14,13 +14,16 @@ const appCallback = (par, callback) => {
 };
 
 // Using
-debugger
-const res = appCallback('Data', (err, data) => {
+
+// named callback
+const callback_ = (err, data) => {
   // treat error
   if (err) throw err;
   // treat data
   console.dir({ data });
-});
+};
+
+const res = appCallback('Data', callback_);
 
 console.dir({ res });
 
