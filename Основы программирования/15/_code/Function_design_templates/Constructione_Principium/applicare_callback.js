@@ -3,12 +3,12 @@
 // applying callback
 
 const appCallback = (par, callback) => {
-  // error part
+  // error part - call with error
   if (!par) {
     callback(new Error('Parameter missing'));
     return false;
   }
-  // callback part
+  // callback part - call with parameter
   callback(null, par);
   return true;
 };
@@ -16,7 +16,9 @@ const appCallback = (par, callback) => {
 // Using
 debugger
 const res = appCallback('Data', (err, data) => {
+  // treat error
   if (err) throw err;
+  // treat data
   console.dir({ data });
 });
 
