@@ -1,11 +1,9 @@
 'use strict';
 
-const curry = (f) => (...args) => {
-  if (f.length > args.length) {
-    return curry(f.bind(null, ...args));
-  } else return f(...args);
+const curry = (fn) => (...args) => {
+  if (args.length > fn.length) return fn(...args);
+  else return curry(fn.bind(null, ...args));
 };
-
 
 const sum4 = (a, b, c, d) => (a + b + c + d);
 debugger
