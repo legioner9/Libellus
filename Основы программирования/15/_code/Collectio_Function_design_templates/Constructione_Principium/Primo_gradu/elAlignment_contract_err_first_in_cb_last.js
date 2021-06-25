@@ -16,6 +16,6 @@ console.log('start');
 
 const callback = () => {
   // do something with args
-}
+};
 const callback_args = (err, ...data) => callback(err, data);
 

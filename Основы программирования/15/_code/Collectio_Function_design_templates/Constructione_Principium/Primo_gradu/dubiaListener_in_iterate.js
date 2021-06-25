@@ -1,7 +1,12 @@
 'use strict';
 
 const iterate = (array, listener) => {
-  for (const item of array) listener(item);
+  let count = 0;
+
+  const sim = setInterval(() => {
+    listener(array[count++]);
+    if (count === array.length) clearInterval(sim);
+  }, 1000);
 };
 
 const city = ['Moscow', 'Paris', 'Beijing'];
