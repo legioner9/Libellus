@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 const esc = (code, s) => `\x1b[${code}m${s}\x1b[0m`;
 
