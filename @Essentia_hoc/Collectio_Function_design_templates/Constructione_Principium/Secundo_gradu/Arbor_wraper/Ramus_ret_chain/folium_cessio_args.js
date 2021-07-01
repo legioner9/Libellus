@@ -1,7 +1,7 @@
 'use strict';
 
 // throw cessio_args
-const wrap_cessio_args = (before, after, fn) => (...args) => after(fn(...before(...args)));
+const wrapCessioArgs = (before, after, fn) => (...args) => after(fn(...before(...args)));
 
 const fn = (par1, par2) => {
   console.dir({ method: { par1, par2 } });
@@ -14,13 +14,14 @@ const before = (...args) => {
   return args;
 };
 
-const after = (arg) => {
+const after = (res) => {
   // behaviour into cessio after
-  console.log(`after args: [${arg}]`);
-  return arg;
+  console.log(`after args: [${res}]`);
+  return res;
 };
 
 // Use
+const wFn = wrapCessioArgs(before, after, fn);
 
-const wFn = wrap_cessio_args(before, after, fn);
-console.log(wFn('unus', 'duo'));
+const res = wFn('unus', 'duo');
+console.log({ res });
