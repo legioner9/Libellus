@@ -55,3 +55,9 @@ const wFn = wrapCessioArgsAsync(before, after, beforeCb, afterCb, fn);
 
 const res = wFn('unus', 'duo', callback);
 console.log({ res });
+
+const wrapAsyncUno = wrapCessioArgsAsync
+.bind(null, before, after, beforeCb, afterCb);
+
+const wFnUno = wrapAsyncUno(fn);
+const resUno = wFnUno('unus', 'duo', callback);
