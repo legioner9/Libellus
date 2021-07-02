@@ -2,7 +2,6 @@
 
 // throw cessio_args
 const wrapCessioArgsAsync = (before, after, beforeCb, afterCb, fn) => (...args) => {
-  debugger
   const callback = args[args.length - 1];
 
   if (typeof callback === 'function') {
@@ -57,7 +56,9 @@ const res = wFn('unus', 'duo', callback);
 console.log({ res });
 
 const wrapAsyncUno = wrapCessioArgsAsync
-.bind(null, before, after, beforeCb, afterCb);
+  .bind(null, before, after, beforeCb, afterCb);
 
 const wFnUno = wrapAsyncUno(fn);
 const resUno = wFnUno('unus', 'duo', callback);
+
+module.exports = wrapAsyncUno;
