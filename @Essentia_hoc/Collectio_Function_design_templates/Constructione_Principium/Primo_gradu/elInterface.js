@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 const anInterface = {
   methodSync(par1, par2) {
     console.log({ methodSync: [par1, par2] });

@@ -25,3 +25,5 @@ const wFn = wrapCessioArgs(before, after, fn);
 
 const res = wFn('unus', 'duo');
 console.log({ res });
+
+
