@@ -9,7 +9,7 @@ const wrapTimer = (msec, fn) => {
 
 const fn = (...args) => console.dir(args);
 
-const fn100 = wrapTimer(5000, fn);
+const fn5000 = wrapTimer(5000, fn);
 
-fn100('primum');
+fn5000('primum');
 
