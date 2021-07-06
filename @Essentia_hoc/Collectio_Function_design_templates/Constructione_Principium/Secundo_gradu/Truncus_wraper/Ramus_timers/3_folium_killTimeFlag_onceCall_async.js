@@ -14,28 +14,33 @@ const wrapKillTimeFlag = (delay, fn) => {
     timeout.close();
     if (killFlag) return;
     // add once_call behaviour
-    // killFlag = true;
+    killFlag = true;
     fn(...args);
   };
 };
 
 // Using
 
-const fn = (...args) => {
-  console.dir({ fn: 'fn', args });
+const fn = (arrArgs, callback) => {
+  console.dir({ fn, arrArgs, callback });
+  let err = null;
+  if (arrArgs[0] === 0) err = new Error('arrArgs[0] === 0');
+  callback(err, arrArgs);
+};
+
+const callback = (err, arrArgs) => {
+  if (err) throw err;
+  console.dir({ callback, arrArgs });
 };
 
 const wrap100 = wrapKillTimeFlag(100, fn);// dying of 100 ms
 const wrap1000 = wrapKillTimeFlag(1000, fn);// dying of 1000 ms
 
 setTimeout(() => {
-  wrap100('defectum');// time constraint
-  wrap1000('successus');
-  wrap1000('defectum');// both call
+  wrap100(['defectum'], callback);
+  // wrap1000([0], callback); error check
+  wrap1000(['successus'], callback);
 }, 500);
 
-setTimeout(() => {
-  wrap1000('defectum');// time constraint
-}, 1500);
 
 module.exports = wrapKillTimeFlag;

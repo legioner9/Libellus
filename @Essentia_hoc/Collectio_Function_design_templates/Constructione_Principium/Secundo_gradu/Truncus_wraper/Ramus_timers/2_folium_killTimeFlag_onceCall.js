@@ -11,7 +11,7 @@ const wrapKillTimeFlag = (delay, fn) => {
   return (...args) => {
     // console.dir({ flag: killFlag, args });
     // close timeout
-    // timeout.close();
+    timeout.close();
     if (killFlag) return;
     // add once_call behaviour
     killFlag = true;
