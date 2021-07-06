@@ -29,9 +29,13 @@ const wrap100 = wrapKillTimeFlag(100, fn);// dying of 100 ms
 const wrap1000 = wrapKillTimeFlag(1000, fn);// dying of 1000 ms
 
 setTimeout(() => {
-  wrap100('defectum');
+  wrap100('defectum');// time constraint
   wrap1000('successus');
-  wrap1000('successus');
+  wrap1000('defectum');// both call
 }, 500);
+
+setTimeout(() => {
+  wrap1000('defectum');// time constraint
+}, 1500);
 
 module.exports = wrapKillTimeFlag;

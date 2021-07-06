@@ -14,7 +14,7 @@ const wrapKillTimeFlag = (delay, fn) => {
     // timeout.close();
     if (killFlag) return;
     // add once_call behaviour
-    // killFlag = true;
+    killFlag = true;
     fn(...args);
   };
 };
@@ -31,7 +31,8 @@ const wrap1000 = wrapKillTimeFlag(1000, fn);// dying of 1000 ms
 setTimeout(() => {
   wrap100('defectum');
   wrap1000('successus');
-  wrap1000('successus');
+  wrap1000('successus');// only once
 }, 500);
+
 
 module.exports = wrapKillTimeFlag;
