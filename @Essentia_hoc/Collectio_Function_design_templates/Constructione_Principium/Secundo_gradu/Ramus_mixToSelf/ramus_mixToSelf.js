@@ -1,9 +1,19 @@
 'use strict';
 
-const mixArgs = (...args) => {
-  mixArgs.args = args;
-  console.dir({ mixArgs, args });
+const fn = (...args) => {
+  const closureObj = {};
+
+  fn.args = args;
+  fn.closureObj = closureObj;
+
+  // do something ...
+  console.dir({ fn, args, closureObj });
 };
 
-mixArgs('a');
-debugger
+fn('a');
+fn('')
+// Use
+const statusCheckClosure = fn.closureObj;
+const callArguments = fn.args;
+
+console.dir({ statusCheckClosure, callArguments });
