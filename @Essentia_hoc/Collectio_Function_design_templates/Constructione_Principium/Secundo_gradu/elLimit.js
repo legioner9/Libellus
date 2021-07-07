@@ -14,7 +14,10 @@ const fn = (...args) => console.dir({ args });
 
 const fn2 = limit(2, fn);
 
-debugger
 fn2('primus');
 fn2('secundus');
 fn2('tertius');
+
+// console:
+// { args: [ 'primus' ] }
+// { args: [ 'secundus' ] }
