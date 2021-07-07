@@ -9,6 +9,13 @@ const stateObject = (...args) => {
     closure,
     printThis() {
       console.dir(this);
+      // provide chane
+      return this;
+    },
+    printArg() {
+      console.dir(this.args);
+      // provide chane
+      return this;
     }
   };
   // return state
@@ -16,5 +23,6 @@ const stateObject = (...args) => {
 };
 
 const state = stateObject('a');
-state.printThis();
-debugger
+// chane flow
+state.printThis().printArg();
+
