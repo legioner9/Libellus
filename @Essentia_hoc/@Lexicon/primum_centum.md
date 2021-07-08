@@ -1,11 +1,14 @@
 ## primum centum
 
-primum centum - первые сто
+cessio        - передача
+intus         - внутренность
 paratus       - готов
+theoria       - теория
+
+primum centum - первые сто
 successus     - успех
 defectum      - провал
 causa         - случай
-cessio        - передача
 primum        - начало
 numero        - numero
 
@@ -26,12 +29,13 @@ truncus       - ствол
 ramus         - ветвь
 folium        - лист
 
+
 prototypum    - прототип
 essentia hoc  - суть этого
 dubia         - сомнения
 collectio     - collectio
 totum         - все
-
+  
 
 
 

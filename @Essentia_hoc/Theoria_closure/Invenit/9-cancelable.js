@@ -1,7 +1,6 @@
 'use strict';
 
 const cancelable = (f) => {
-
   const wrapper = (...args) => {
     if (f) return f(...args);
   };
@@ -20,5 +19,3 @@ const f2 = cancelable(fn);
 f2('first');
 f2.cancel();
 f2('second');
-
-
