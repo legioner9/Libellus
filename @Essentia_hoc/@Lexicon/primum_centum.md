@@ -4,6 +4,14 @@ cessio        - передача
 intus         - внутренность
 paratus       - готов
 theoria       - теория
+probe         - пробник
+initium       - первая попытка
+studium       - старание
+unitio        - объединение
+exemplo       - пример
+civitatum     - объединенный
+generativus   - обобщенный
+fucus         - обертка
 
 primum centum - первые сто
 successus     - успех
