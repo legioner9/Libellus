@@ -1,20 +1,27 @@
 'use strict';
 
+const preComutClosure_ = (closureForFn) => {
+  closureForFn.timer.timeout  = setTimeout(() => {
+    closureForFn.flags.kill = true;
+  }, closureForFn.time.msec);
+};
 const comutClosure_ = (closureForFn) => closureForFn;
 const closureToMoresFn_ = (bfn, closureForFn) => bfn;
 const returnBfn_ = (bfn, closureForFn) => {
   if (!closureForFn.flags.kill) {
-    closureForFn.flags.kill = true;
     return bfn;
   } else return () => undefined;
 };
 const closureForFn_ = {
   context: {},
-  flags: { kill: false },
+  flags: { kill: false, },
+  time: { msec: 300, },
+  timer: { timeout: null, },
 };
 
 const generativusFucus = (
   fn,
+  preComutClosure = preComutClosure_,
   comutClosure = comutClosure_,
   closureToMoresFn = closureToMoresFn_,
   returnBfn = returnBfn_,
@@ -22,6 +29,8 @@ const generativusFucus = (
   thisForFn = {}
 ) => {
   debugger
+  closureForFn = preComutClosure(closureForFn);
+
   const fucus = function(...args) {
 
     const bfn = fn.bind(thisForFn);
@@ -43,6 +52,7 @@ const generativusFucus = (
   };
   return fucus;
 };
+
 
 const fn = function(...args) {
   console.dir({ args, this: this });
