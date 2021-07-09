@@ -12,6 +12,11 @@ exemplo       - пример
 civitatum     - объединенный
 generativus   - обобщенный
 fucus         - обертка
+clientela     - зависимость
+commutatus    - изменение
+substitutione - подмена
+reformatio    - преображение
+reditum       - возвращение
 
 primum centum - первые сто
 successus     - успех
