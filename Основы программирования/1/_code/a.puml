@@ -1,15 +1,15 @@
-@startuml
-skinparam ParticipantPadding 20
-skinparam BoxPadding 10
-box "Foo1"
-participant Alice1
-participant Alice2
-end box
-box "Foo2"
-participant Bob1
-participant Bob2
-end box
-Alice1 -> Bob1 : hello
-Alice1 -> Out : out
-@enduml
+@startuml Hello World
 
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v10.0/dist
+!includeurl AWSPuml/AWSCommon.puml
+!includeurl AWSPuml/EndUserComputing/all.puml
+!includeurl AWSPuml/Storage/SimpleStorageService.puml
+
+actor "Person" as personAlias
+WorkDocs(desktopAlias, "Label", "Technology", "Optional Description")
+SimpleStorageService(storageAlias, "Label", "Technology", "Optional Description")
+
+personAlias --> desktopAlias
+desktopAlias --> storageAlias
+
+@enduml
