@@ -1,5 +1,18 @@
 'use strict';
 
+const clone = val => {
+  if (typeof val !== 'object' || val === null) {
+    return val;
+  }
+  const objOrArray = Array.isArray(val) ? new Array(val.length) : {};
+  for (const key in val) {
+    if (Object.prototype.hasOwnProperty.call(val, key)) {
+      objOrArray[key] = clone(val[key]);
+    }
+  }
+  return objOrArray;
+};
+
 const propObj_ = {
   preComutClosure: (closureForFn) => closureForFn,
   comutClosure: (closureForFn) => closureForFn,
@@ -15,12 +28,13 @@ const generativusFucus = (propObj, fn) => {
   const fucus = function(...args) {
 
     const bfn = fn.bind(propObj.thisForFn);
+    fucus.bfn = bfn;
     fucus.args = args;
     fucus.closureForFn = propObj.closureForFn;
     fucus.thisForFn = propObj.thisForFn;
 
     fucus.printFn = function() {
-      console.log(bfn);
+      console.log(this.bfn);
       return fucus;
     };
 
