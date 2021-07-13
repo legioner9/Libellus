@@ -17,6 +17,8 @@ commutatus    - изменение
 substitutione - подмена
 reformatio    - преображение
 reditum       - возвращение
+motus         - движение
+versus        - по направлению к
 
 primum centum - первые сто
 successus     - успех
