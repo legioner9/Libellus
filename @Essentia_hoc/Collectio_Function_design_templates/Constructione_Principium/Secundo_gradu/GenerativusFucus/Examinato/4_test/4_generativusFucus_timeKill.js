@@ -1,9 +1,10 @@
 'use strict';
 
 const preComutClosure_ = (closureForFn) => {
-  closureForFn.timer.timeout  = setTimeout(() => {
+  closureForFn.timer.timeout = setTimeout(() => {
     closureForFn.flags.kill = true;
   }, closureForFn.time.msec);
+  return closureForFn;
 };
 const comutClosure_ = (closureForFn) => closureForFn;
 const closureToMoresFn_ = (bfn, closureForFn) => bfn;
