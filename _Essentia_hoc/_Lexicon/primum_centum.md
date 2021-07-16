@@ -19,6 +19,8 @@ reformatio    - преображение
 reditum       - возвращение
 motus         - движение
 versus        - по направлению к
+modos         - методы
+opus          - построение произведение
  
 primum centum - первые сто
 successus     - успех
