@@ -20,10 +20,12 @@ const fn = function(...args) {
 
 propObj.closureForFn.time.msec = 300;
 
+debugger
 const fucus300 = generativusFucus(propObj, fn);// start lifetime 300
 
 setTimeout(() => {
-  fucus300('100');// still alive
+  debugger
+  const res = fucus300('100');// still alive
 }, 100);
 
 setTimeout(() => {
