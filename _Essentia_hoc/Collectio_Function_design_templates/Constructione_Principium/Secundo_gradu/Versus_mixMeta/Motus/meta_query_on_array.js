@@ -110,7 +110,7 @@ const query = ({ name, age, city }) => (
 
 // Build prototype and assign to array elements
 assignMetadata(data, metadata);
-
+debugger
 // Apply query to dataset
 const res = data.filter(query);
 console.dir({ res });
