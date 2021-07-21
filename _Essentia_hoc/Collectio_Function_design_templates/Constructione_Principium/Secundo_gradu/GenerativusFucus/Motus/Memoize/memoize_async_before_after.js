@@ -1,5 +1,8 @@
 'use strict';
 
+const Memoized = function() {
+};
+
 const memoizeAsync = (fn, length = 2) => {
   const cache = new Map();
   const memoized = (...args) => {
@@ -7,21 +10,33 @@ const memoizeAsync = (fn, length = 2) => {
     const key = args[0];
     const value = cache.get(key);
     if (cache.has(key)) {
-      console.log(`cache key ${key}`);
+      console.log(`from cache key: ${key}`);
       return callback(value.err, value.data);
     }
     fn(...args, (err, data) => {
       cache.set(key, { err, data });
       if (cache.size >= length) {
         const firstKey = cache.keys().next().value;
-        console.log(`cache deleted ${firstKey}`);
+        console.log(`cache deleted key: ${firstKey}`);
         cache.delete(firstKey);
       }
-      console.log(`callback arg ${args}`);
+      console.log(`callback called with args: ${err},${data}`);
       callback(err, data);
     });
   };
-  return memoized;
+  const props = {
+    cache,
+    timeout: 0,
+    limit: 0,
+    size: 0,
+    maxSize: 0,
+  };
+  Object.setPrototypeOf(memoized, Memoized.prototype);
+  return Object.assign(memoized, props);
+};
+
+Memoized.prototype.clear = function() {
+  this.cache.clear();
 };
 
 const fn = (x, callback) => {
@@ -31,6 +46,9 @@ const fn = (x, callback) => {
 const callback = (...args) => args;
 const mfn = memoizeAsync(fn);
 
+mfn(1, callback);
+debugger
+mfn.clear();
 mfn(1, callback);
 mfn(1, callback);
 debugger
