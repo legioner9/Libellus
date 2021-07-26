@@ -1,6 +1,15 @@
 'use strict';
 
-const asyncKillTimeout = (callbackDelayKill, fn) => {
+const crypto = require('crypto');
+
+const getKey = (x) => x.toString() + ':' + typeof x;
+
+const generateKey = (arr) => {
+  const key = arr.map(getKey).join('|');
+  return crypto.createHash('sha256').update(key).digest('hex');
+};
+
+const asyncKillTimeoutMemo = (callbackDelayKill, fn) => {
   let flagKill = false;
   const timer = setTimeout(() => {
     flagKill = true;

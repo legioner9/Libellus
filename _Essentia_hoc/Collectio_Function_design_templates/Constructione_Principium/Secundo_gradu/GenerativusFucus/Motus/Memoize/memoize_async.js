@@ -29,7 +29,7 @@ const fn = (x, callback) => {
   callback(null, x);
 };
 const callback = (...args) => args;
-debugger
+ debugger
 const mfn = memoizeAsync(fn);
 
 mfn(1, callback);

@@ -1,5 +1,14 @@
 'use strict';
 
+const crypto = require('crypto');
+
+const getKey = (x) => x.toString() + ':' + typeof x;
+
+const generateKey = (arr) => {
+  const key = arr.map(getKey).join('|');
+  return crypto.createHash('sha256').update(key).digest('hex');
+};
+
 const Memoized = function() {
 };
 
@@ -7,7 +16,7 @@ const memoizeAsync = (fn, length = 2) => {
   const cache = new Map();
   const memoized = (...args) => {
     const callback = args.pop();
-    const key = args[0];
+    const key = generateKey(args);
     const value = cache.get(key);
     if (cache.has(key)) {
       console.log(`from cache key: ${key}`);
