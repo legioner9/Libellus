@@ -21,6 +21,7 @@ motus         - движение
 versus        - по направлению к
 modos         - методы
 opus          - построение произведение
+fons          - родник
  
 primum centum - первые сто
 successus     - успех
