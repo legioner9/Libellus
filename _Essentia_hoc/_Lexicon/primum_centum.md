@@ -23,7 +23,11 @@ modos         - методы
 opus          - построение произведение
 fons          - родник
 signa         - стандарты
- 
+artus         - каркас (архитектура)
+fascis        - пучок (состав)
+operti        - закрытие (замыкание)
+
+
 primum centum - первые сто
 successus     - успех
 defectum      - провал
