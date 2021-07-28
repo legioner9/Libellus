@@ -26,7 +26,7 @@ signa         - стандарты
 artus         - каркас (архитектура)
 fascis        - пучок (состав)
 operti        - закрытие (замыкание)
-
+praevia       - предварительный
 
 primum centum - первые сто
 successus     - успех
