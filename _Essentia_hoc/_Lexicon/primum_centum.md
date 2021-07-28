@@ -22,6 +22,7 @@ versus        - по направлению к
 modos         - методы
 opus          - построение произведение
 fons          - родник
+signa         - стандарты
  
 primum centum - первые сто
 successus     - успех
