@@ -27,6 +27,7 @@ artus         - каркас (архитектура)
 fascis        - пучок (состав)
 operti        - закрытие (замыкание)
 praevia       - предварительный
+exitus        - результат
 
 primum centum - первые сто
 successus     - успех
