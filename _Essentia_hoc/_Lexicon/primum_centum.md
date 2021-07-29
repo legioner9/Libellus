@@ -28,6 +28,8 @@ fascis        - пучок (состав)
 operti        - закрытие (замыкание)
 praevia       - предварительный
 exitus        - результат
+mores         - поведение
+metus         - возврат
 
 primum centum - первые сто
 successus     - успех
