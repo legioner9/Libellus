@@ -32,6 +32,7 @@ mores         - поведение
 metus         - возврат
 kernel        - стержень ядро
 vis           - суть 
+communis      - общий
 
 primum centum - первые сто
 successus     - успех
