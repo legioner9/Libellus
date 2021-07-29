@@ -30,6 +30,8 @@ praevia       - предварительный
 exitus        - результат
 mores         - поведение
 metus         - возврат
+kernel        - стержень ядро
+vis           - суть 
 
 primum centum - первые сто
 successus     - успех
