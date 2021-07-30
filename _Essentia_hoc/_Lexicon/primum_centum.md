@@ -33,6 +33,7 @@ metus         - возврат
 kernel        - стержень ядро
 vis           - суть 
 communis      - общий
+usu           - использование
 
 primum centum - первые сто
 successus     - успех
