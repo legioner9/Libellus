@@ -34,6 +34,9 @@ kernel        - стержень ядро
 vis           - суть 
 communis      - общий
 usu           - использование
+fetus         - плоды
+messis        - урожай
+
 
 primum centum - первые сто
 successus     - успех
