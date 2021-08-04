@@ -1,0 +1,68 @@
+{
+  "name": "metatests",
+  "version": "0.7.2",
+  "author": "Timur Shemsedinov <timur.shemsedinov@gmail.com>",
+  "description": "Simple to use test engine for Metarhia technology stack",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metarhia/metatests"
+  },
+  "keywords": [
+    "test",
+    "testing",
+    "unittesting",
+    "unit-testing",
+    "tdd",
+    "tap",
+    "metarhia"
+  ],
+  "bugs": {
+    "url": "https://github.com/metarhia/metatests/issues"
+  },
+  "main": "metatests.js",
+  "bin": {
+    "metatests": "bin/cli.js"
+  },
+  "files": [
+    "bin/*.js",
+    "lib/"
+  ],
+  "scripts": {
+    "doc": "metadoc",
+    "test": "npm run -s lint && node bin/cli.js test --exclude test/fixtures",
+    "test:unit": "node test/unit",
+    "mutation": "stryker run",
+    "perf": "./bin/cli.js benchmarks",
+    "lint": "eslint . && remark . && prettier --check \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/.*rc\" \"**/*.yml\" \"**/*.yaml\"",
+    "fix": "eslint --fix . && prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/.*rc\" \"**/*.yml\" \"**/*.yaml\""
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "@metarhia/common": "^2.1.0",
+    "tap-mocha-reporter": "^5.0.1",
+    "tap-yaml": "^1.0.0",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.1",
+    "@metarhia/doc": "^0.6.0",
+    "@stryker-mutator/core": "^3.2.4",
+    "@stryker-mutator/html-reporter": "^3.1.0",
+    "@stryker-mutator/javascript-mutator": "^3.2.4",
+    "eslint": "^7.5.0",
+    "eslint-config-metarhia": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "remark-cli": "^8.0.0",
+    "remark-preset-lint-metarhia": "^2.0.0",
+    "remark-validate-links": "^10.0.0"
+  }
+}
