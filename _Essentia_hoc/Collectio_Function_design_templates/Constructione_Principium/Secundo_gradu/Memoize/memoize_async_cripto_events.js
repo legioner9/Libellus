@@ -52,6 +52,18 @@ const memoizeAsync = (fn, length = 2) => {
       clear: null,
     },
   };
+
+
+  memoized.addPrototype = function(name = '', proto) {
+    Memoized.prototype[name] = proto;
+  };
+
+  memoized.addEventName = function(name = '') {
+    props.events[name] = null;
+  };
+
+
+
   Object.setPrototypeOf(memoized, Memoized.prototype);
   return Object.assign(memoized, props);
 };
