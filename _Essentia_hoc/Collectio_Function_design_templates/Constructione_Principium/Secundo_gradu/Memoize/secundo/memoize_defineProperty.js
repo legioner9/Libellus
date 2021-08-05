@@ -12,9 +12,42 @@ const generateKey = (arr) => {
 const Memoized = function() {
 };
 
+// const objProto = {};
+
+const objProto = {
+  clear() {
+    this.cache.clear();
+  },
+  add(key, err, data) {
+    this.emit('add', err, data);
+    this.cache.set(key, { err, data });
+    return this;
+  },
+  del(key) {
+    this.emit('del', key);
+    this.cache.delete(key);
+    return this;
+  },
+  get(key, callback) {
+    const record = this.cache.get(key);
+    callback(record.err, record.data);
+    return this;
+  },
+  on(eventName, listener) {
+    if (eventName in this.events) {
+      this.events[eventName] = listener;
+    }
+  },
+  emit(eventName, ...args) {
+    const event = this.events[eventName];
+    if (event) event(...args);
+  }
+};
+
 const memoizeAsync = (fn, length = 2) => {
   const cache = new Map();
   const memoized = (...args) => {
+
     const callback = args.pop();
     const key = generateKey(args);
     const value = cache.get(key);
@@ -36,6 +69,7 @@ const memoizeAsync = (fn, length = 2) => {
       callback(err, data);
     });
   };
+
   const props = {
     cache,
     timeout: 0,
@@ -53,61 +87,33 @@ const memoizeAsync = (fn, length = 2) => {
     },
   };
 
-
-  memoized.addPrototype = function(name = '', proto) {
-    Memoized.prototype[name] = proto;
-  };
-
-  memoized.addPrototypes = function(objProto) {
-    for (key of objProto) {
-      Memoized.prototype[key] = objProto[key];
-    }
-  };
-
-
-  memoized.addEventName = function(name = '') {
-    props.events[name] = null;
-  };
-
-
+  Object.defineProperties(memoized, {
+    'setProperties': {
+      value: function(name, props) {
+        props[name] = props;
+        return this;
+      },
+    },
+    'addEventName': {
+      value: function(name = '') {
+        props.events[name] = null;
+        return this;
+      },
+    },
+    'addPrototypes': {
+      value: function(objProto) {
+        for (const key in objProto) {
+          if (objProto.hasOwnProperty(key)) Memoized.prototype[key] = objProto[key];
+        }
+        return this;
+      },
+    },
+  });
 
   Object.setPrototypeOf(memoized, Memoized.prototype);
-  return Object.assign(memoized, props);
-};
+  Object.assign(memoized, props);
 
-Memoized.prototype.clear = function() {
-  this.cache.clear();
-};
-
-
-
-Memoized.prototype.add = function(key, err, data) {
-  this.emit('add', err, data);
-  this.cache.set(key, { err, data });
-  return this;
-};
-
-Memoized.prototype.del = function(key) {
-  this.emit('del', key);
-  this.cache.delete(key);
-  return this;
-};
-
-Memoized.prototype.get = function(key, callback) {
-  const record = this.cache.get(key);
-  callback(record.err, record.data);
-  return this;
-};
-
-Memoized.prototype.on = function(eventName, listener) {
-  if (eventName in this.events) {
-    this.events[eventName] = listener;
-  }
-};
-
-Memoized.prototype.emit = function(eventName, ...args) {
-  const event = this.events[eventName];
-  if (event) event(...args);
+  return memoized;
 };
 
 // Usu
@@ -116,7 +122,13 @@ const fn = (x, callback) => {
   callback(null, x);
 };
 const callback = (...args) => args;
-const mfn = memoizeAsync(fn);
+debugger
+const mfn = memoizeAsync(fn).addPrototypes(objProto);
+
+mfn.on('add', (...data) => {
+  console.log('event add called with: ', data);
+});
+// mfn.addPrototypes(objProto);
 
 mfn(1, callback);
 debugger
