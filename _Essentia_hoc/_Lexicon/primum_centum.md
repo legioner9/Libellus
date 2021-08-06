@@ -36,7 +36,7 @@ communis      - общий
 usu           - использование
 fetus         - плоды
 messis        - урожай
-
+os            - кость
 
 primum centum - первые сто
 successus     - успех
