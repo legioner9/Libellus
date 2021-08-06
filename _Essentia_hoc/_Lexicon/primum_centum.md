@@ -39,6 +39,8 @@ messis        - урожай
 os            - кость
 alius         - другой
 internus      - внутренний
+ligamentum    - связка
+unitio        - объединение
 
 primum centum - первые сто
 successus     - успех
@@ -46,6 +48,7 @@ defectum      - провал
 causa         - случай
 primum        - начало
 numero        - numero
+narratio      - рассказ
 
 unus          - один
 duo           - два
