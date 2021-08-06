@@ -37,6 +37,8 @@ usu           - использование
 fetus         - плоды
 messis        - урожай
 os            - кость
+alius         - другой
+internus      - внутренний
 
 primum centum - первые сто
 successus     - успех
