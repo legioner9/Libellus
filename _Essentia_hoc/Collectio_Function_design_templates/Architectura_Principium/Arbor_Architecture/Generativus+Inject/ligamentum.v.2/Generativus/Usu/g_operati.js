@@ -1,6 +1,6 @@
 'use strict';
 
-const { timer } = require('artus.v.2/fascisOperati/timer');
+const { timer } = require('artus.v.2/fascisOperati/g_fascis');
 
 const fn = function(...args) {
   console.dir({ args, this: this });
