@@ -1,7 +1,7 @@
 'use strict';
 
 const  memoizeAsync  = require('artus.v.2/fascisOperati/i_fascis');
-debugger
+
 // memoizeAsync.lengthCache(3);
 
 const fn = (x, callback) => {
@@ -11,7 +11,7 @@ const fn = (x, callback) => {
 const callback = (...args) => args;
 
 const mfn = memoizeAsync(fn);
-debugger
+
 const is = mfn.setLengthCache(3);
 
 mfn.on('add', (...data) => {
