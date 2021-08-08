@@ -41,6 +41,7 @@ alius         - другой
 internus      - внутренний
 ligamentum    - связка
 unitio        - объединение
+ostium        - вход
 
 primum centum - первые сто
 successus     - успех
