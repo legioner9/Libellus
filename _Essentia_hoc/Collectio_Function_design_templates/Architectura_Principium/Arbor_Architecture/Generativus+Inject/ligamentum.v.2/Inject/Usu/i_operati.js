@@ -2,7 +2,7 @@
 
 const  memoizeAsync  = require('artus.v.2/fascisOperati/i_fascis');
 debugger
-memoizeAsync.lengthCache(3);
+// memoizeAsync.lengthCache(3);
 
 const fn = (x, callback) => {
   if (typeof x !== 'number') callback('argument is not a number');
@@ -11,6 +11,8 @@ const fn = (x, callback) => {
 const callback = (...args) => args;
 
 const mfn = memoizeAsync(fn);
+
+const is = mfn.setLengthCache(3);
 
 mfn.on('add', (...data) => {
   console.log('event add called with: ', data);
