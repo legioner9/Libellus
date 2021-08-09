@@ -42,6 +42,11 @@ internus      - внутренний
 ligamentum    - связка
 unitio        - объединение
 ostium        - вход
+     - составной
+ante          - до
+post          - после
+in            - из
+narratio      - рассказ
 
 primum centum - первые сто
 successus     - успех
@@ -49,7 +54,7 @@ defectum      - провал
 causa         - случай
 primum        - начало
 numero        - numero
-narratio      - рассказ
+
 
 unus          - один
 duo           - два

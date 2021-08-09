@@ -8,6 +8,7 @@ const fn = function(...args) {
 debugger
 const fucus = timer(fn).setLimit(2).setTimer(1200);
 fucus(0);
+fucus.printBFn();
 setTimeout(() => {
   fucus('primus');
 }, 100);
