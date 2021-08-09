@@ -10,13 +10,17 @@ const fn = (x, callback) => {
 };
 const callback = (...args) => args;
 
-const mfn = memoizeAsync(fn);
-
-const is = mfn.setLengthCache(3);
-
-mfn.on('add', (...data) => {
+const add = (...data) => {
   console.log('event add called with: ', data);
-});
+}
+
+const mfn = memoizeAsync(fn).setLengthCache(3).on('add', add);
+
+// const is = mfn.setLengthCache(3);
+
+// mfn.on('add', (...data) => {
+//   console.log('event add called with: ', data);
+// });
 // mfn.addPrototypes(objProto);
 
 mfn(1, callback);
