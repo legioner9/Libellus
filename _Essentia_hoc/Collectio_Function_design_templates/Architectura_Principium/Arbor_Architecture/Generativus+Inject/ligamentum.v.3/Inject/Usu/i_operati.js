@@ -16,7 +16,7 @@ const mfn = memoizeAsync(fn).setLengthCache(3).onEventCache('add', add);
 
 mfn(1, callback);
 debugger
-mfn.clear();
+mfn.clearCache();
 debugger
 mfn(1, callback);
 mfn(1, callback);
