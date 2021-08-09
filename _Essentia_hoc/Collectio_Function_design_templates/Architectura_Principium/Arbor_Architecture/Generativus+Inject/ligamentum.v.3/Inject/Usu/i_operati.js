@@ -12,7 +12,7 @@ const add = (...data) => {
   console.log('event add called with: ', data);
 }
 
-const mfn = memoizeAsync(fn).setLengthCache(3).on('add', add);
+const mfn = memoizeAsync(fn).setLengthCache(3).onEventCache('add', add);
 
 mfn(1, callback);
 debugger
