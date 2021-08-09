@@ -42,7 +42,7 @@ internus      - внутренний
 ligamentum    - связка
 unitio        - объединение
 ostium        - вход
-     - составной
+compositum    - составной
 ante          - до
 post          - после
 in            - из
