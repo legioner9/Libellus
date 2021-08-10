@@ -47,6 +47,8 @@ ante          - до
 post          - после
 in            - из
 narratio      - рассказ
+compositum    - сочетание
+tubus         - труба
 
 primum centum - первые сто
 successus     - успех
