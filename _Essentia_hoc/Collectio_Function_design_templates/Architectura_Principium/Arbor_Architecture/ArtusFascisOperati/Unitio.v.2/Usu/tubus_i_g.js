@@ -13,16 +13,26 @@ const add = (...data) => {
 };
 debugger
 
-const t_fucus = timer(fn).setLimit(2).setTimer(1200);
+const t_fucus = timer(fn)//.setLimit(2).setTimer(1200);
+const a_t_fucus = memoizeAsync(t_fucus)//.setLengthCache(3).onEventCache('add', add);
 debugger
-t_fucus(0, callback);
-t_fucus.printBFn();
+
+a_t_fucus(0, callback);
 setTimeout(() => {
+  a_t_fucus(1, callback);
   debugger
-  t_fucus('primus', callback);
+  a_t_fucus.clearCache();
+  debugger
+  a_t_fucus(1, callback);
+  a_t_fucus(1, callback);
+  debugger
+  a_t_fucus(2, callback);
+  a_t_fucus(3, callback);
+  a_t_fucus(4, callback);
+  a_t_fucus('primus', callback);
 }, 100);
 
 setTimeout(() => {
-  t_fucus('secundus', callback);
+  a_t_fucus('secundus', callback);
 }, 500);
 
