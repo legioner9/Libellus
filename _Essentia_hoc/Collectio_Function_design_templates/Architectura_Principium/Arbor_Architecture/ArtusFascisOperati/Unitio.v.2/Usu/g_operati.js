@@ -6,7 +6,7 @@ const fn = function(...args) {
   console.dir({ args, this: this });
 };
 debugger
-const fucus = timer(fn).setLimit(2).setTimer(1200);
+const fucus = timer(fn).setLimit(3).setTimer(200);
 fucus(0);
 fucus.printBFn();
 setTimeout(() => {
