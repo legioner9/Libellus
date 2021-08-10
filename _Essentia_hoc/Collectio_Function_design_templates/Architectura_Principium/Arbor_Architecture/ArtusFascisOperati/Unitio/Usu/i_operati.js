@@ -4,7 +4,7 @@ const { memoizeAsync } = require('artus/fascisOperati/i_fascis');
 
 const fn = (x, callback) => {
   if (typeof x !== 'number') callback('argument is not a number');
-  callback(null, x);
+  else callback(null, x);
 };
 const callback = (...args) => args;
 
