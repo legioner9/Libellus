@@ -49,13 +49,17 @@ in            - из
 narratio      - рассказ
 compositum    - сочетание
 tubus         - труба
+speculum      - зеркало
+cardinalis    - основной
+bene          - вариант
 
 primum centum - первые сто
 successus     - успех
 defectum      - провал
 causa         - случай
 primum        - начало
-numero        - numero
+numero        - считать
+faex          - грязь
 
 
 unus          - один
