@@ -16,6 +16,7 @@ const add = (...data) => {
 const mfn = memoizeAsync(fn).setLengthCache(3).onEventCache('add', add);
 
 const fucus = timer(mfn).setLimit(2).setTimer(1200);
+debugger
 fucus(0);
 fucus.printFn();
 debugger
