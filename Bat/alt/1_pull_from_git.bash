@@ -1,2 +1,2 @@
-cd '/home/st/data_1/Libellus_pull_all'
+cd '/home/st/data_1/Libellus'
 git pull origin master&
